@@ -34,8 +34,8 @@ module Log4r
       super( _name, hash.merge({:create => false}) )
       if hash.has_key?(:maxsize) || hash.has_key?('maxsize') 
         _maxsize = (hash[:maxsize] or hash['maxsize']).to_i
-        if _maxsize.class != Fixnum
-          raise TypeError, "Argument 'maxsize' must be an Fixnum", caller
+        if _maxsize.class != Integer
+          raise TypeError, "Argument 'maxsize' must be an Integer", caller
         end
         if _maxsize == 0
           raise TypeError, "Argument 'maxsize' must be > 0", caller
@@ -44,8 +44,8 @@ module Log4r
       end
       if hash.has_key?(:maxtime) || hash.has_key?('maxtime') 
         _maxtime = (hash[:maxtime] or hash['maxtime']).to_i
-        if _maxtime.class != Fixnum
-          raise TypeError, "Argument 'maxtime' must be an Fixnum", caller
+        if _maxtime.class != Integer
+          raise TypeError, "Argument 'maxtime' must be an Integer", caller
         end
         if _maxtime == 0
           raise TypeError, "Argument 'maxtime' must be > 0", caller
@@ -54,8 +54,8 @@ module Log4r
       end
       if hash.has_key?(:max_backups) || hash.has_key?('max_backups') 
         _max_backups = (hash[:max_backups] or hash['max_backups']).to_i
-        if _max_backups.class != Fixnum
-          raise TypeError, "Argument 'max_backups' must be an Fixnum", caller
+        if _max_backups.class != Integer 
+          raise TypeError, "Argument 'max_backups' must be an Integer", caller
         end
         @max_backups = _max_backups
       else
